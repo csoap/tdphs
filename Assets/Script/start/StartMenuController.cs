@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StartMenuController : MonoBehaviour
 {
+    public static StartMenuController  _instance;
 
     public TweenScale startTweenScale;
     public TweenScale loginTweenScale;
@@ -11,6 +12,7 @@ public class StartMenuController : MonoBehaviour
     public TweenScale serverTweenScale;
     public TweenPosition startTweenPosition;
     public TweenPosition characterselectTweenPosition;
+    public TweenPosition charactershowselectTweenPosition;
 
     public UIInput usernameInput;
     public UIInput passwordInput;
@@ -32,6 +34,21 @@ public class StartMenuController : MonoBehaviour
     private bool haveInitServerList = false;
 
     public GameObject serverSelectedGo;
+
+    public GameObject[] characterArray;
+    public GameObject[] characterSelectArray;
+
+    private GameObject characterSelect;//当前选中的角色
+    public UIInput characternameInput;
+    public Transform characterSelectedParent;
+
+    public UILabel nameLabelCharacterselect;
+    public UILabel lvLabelCharacterselect;
+
+    void Awake()
+    {
+        _instance = this;
+    }
 
     private void Start()
     {
@@ -168,5 +185,72 @@ public class StartMenuController : MonoBehaviour
         StartCoroutine(HidePanel(serverTweenScale.gameObject));
         startTweenScale.gameObject.SetActive(true);
         startTweenScale.PlayReverse();
+    }
+
+    public void OnCharacterClick(GameObject go)
+    {
+
+        if (characterSelect != null)
+        {
+            if (characterSelect == go) return;
+            iTween.ScaleTo(characterSelect, new Vector3(1,1,1), 0.5f);
+        }
+        iTween.ScaleTo(go, new Vector3(1.5f, 1.5f, 1.5f), 0.5f);
+        characterSelect = go;
+    }
+
+    public void OnChooseCharacterClick()
+    {
+        characterselectTweenPosition.PlayReverse();
+        StartCoroutine(HidePanel(characterselectTweenPosition.gameObject));
+        charactershowselectTweenPosition.gameObject.SetActive(true);
+        charactershowselectTweenPosition.PlayForward();
+    }
+
+    public void OnChooseCharacterBackClick()
+    {
+        charactershowselectTweenPosition.PlayReverse();
+        StartCoroutine(HidePanel(charactershowselectTweenPosition.gameObject));
+        characterselectTweenPosition.gameObject.SetActive(true);
+        characterselectTweenPosition.PlayForward();
+    }
+
+    public void OnChooseCharacterSureClick()
+    {
+        //TODO 判断姓名是否输入正确 
+        //TODO 判断是否选择角色
+
+        int index = -1;
+        for (int i = 0; i < characterArray.Length; i++)
+        {
+            if (characterSelect == characterArray[i])
+            {
+                index = i;
+                break;
+            }
+        }
+
+        if (index == -1)
+        {
+            return;
+        }
+        //characterSelectedParent.DestroyChildren();
+        Destroy(characterSelectedParent.GetComponentInChildren<Animation>().gameObject);
+
+        //更新角色的名字和等级
+
+        nameLabelCharacterselect.text = characternameInput.value;
+        lvLabelCharacterselect.text = "LV.1";
+
+        GameObject go = GameObject.Instantiate(characterSelectArray[index], Vector3.zero, Quaternion.identity);
+        go.transform.SetParent(characterSelectedParent);
+        go.transform.localPosition = Vector3.zero;
+        go.transform.localRotation = Quaternion.identity;
+        go.transform.localScale = Vector3.one;
+
+        charactershowselectTweenPosition.PlayReverse();
+        StartCoroutine(HidePanel(charactershowselectTweenPosition.gameObject));
+        characterselectTweenPosition.gameObject.SetActive(true);
+        characterselectTweenPosition.PlayForward();
     }
 }
