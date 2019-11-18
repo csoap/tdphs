@@ -8,7 +8,7 @@ public class CharacterShow : MonoBehaviour {
     {
         if (!isPress)
         {
-            StartMenuController._instance.OnCharacterClick(transform.parent.gameObject);
+                StartMenuController._instance.OnCharacterClick(transform.parent.gameObject);
         }
     }
 }
