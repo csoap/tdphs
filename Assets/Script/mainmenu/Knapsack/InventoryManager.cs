@@ -6,9 +6,9 @@ public class InventoryManager : MonoBehaviour
 {
     public static InventoryManager _instance;
     public TextAsset listinfo;
-    public Dictionary<int, Inventory> inventoryDict = new Dictionary<int, Inventory>();
+    public Dictionary<int, Inventory> inventoryDict = new Dictionary<int, Inventory>();//所有的道具字典
     //public Dictionary<int, InventoryItem> inventoryItemDict = new Dictionary<int, InventoryItem>();
-    public List<InventoryItem> inventoryItemList = new List<InventoryItem>();
+    public List<InventoryItem> inventoryItemList = new List<InventoryItem>();//已拥有道具列表
 
     public delegate void OnInventoryChangeEvent();
     public event OnInventoryChangeEvent OnInventoryChange;
@@ -79,7 +79,6 @@ public class InventoryManager : MonoBehaviour
                 }
 
             }
-            //print(itemStr);
             //售价 星级 品质 伤害 生命 战斗力 作用类型 作用值 描述
             inventory.Price = int.Parse(proArray[5]);
             if (inventory.InventoryTYPE == InventoryType.Equip)
@@ -143,7 +142,8 @@ public class InventoryManager : MonoBehaviour
                 }
             }
         }
-        OnInventoryChange();
+
+        if (OnInventoryChange != null) OnInventoryChange();
     }
 
     public void RemoveInventoryItem(InventoryItem it)
