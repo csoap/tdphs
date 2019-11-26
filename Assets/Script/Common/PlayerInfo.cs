@@ -506,6 +506,48 @@ public class PlayerInfo : MonoBehaviour
         this.Coin += count;
         OnPlayerInfoChanged(InfoType.Coin);
     }
+    /// <summary>
+    /// 获取综合战斗力的方法
+    /// </summary>
+    /// <returns></returns>
+    public int GetOverallPower()
+    {
+        float power = this.Power;
+        if (helmInventoryItem != null)
+        {
+            power += helmInventoryItem.Inventory.Power * (1 + (helmInventoryItem.Level - 1) / 10f);
+        }
+        if (clothInventoryItem != null)
+        {
+            power += clothInventoryItem.Inventory.Power * (1 + (clothInventoryItem.Level - 1) / 10f);
+        }
+
+        if (weaponInventoryItem != null)
+        {
+            power += weaponInventoryItem.Inventory.Power * (1 + (weaponInventoryItem.Level - 1) / 10f);
+        }
+        if (shoesInventoryItem != null)
+        {
+            power += shoesInventoryItem.Inventory.Power * (1 + (shoesInventoryItem.Level - 1) / 10f);
+        }
+        if (necklaceInventoryItem != null)
+        {
+            power += necklaceInventoryItem.Inventory.Power * (1 + (necklaceInventoryItem.Level - 1) / 10f);
+        }
+        if (braceletInventoryItem != null)
+        {
+            power += braceletInventoryItem.Inventory.Power * (1 + (braceletInventoryItem.Level - 1) / 10f);
+        }
+        if (ringInventoryItem != null)
+        {
+            power += ringInventoryItem.Inventory.Power * (1 + (ringInventoryItem.Level - 1) / 10f);
+        }
+        if (wingInventoryItem != null)
+        {
+            power += wingInventoryItem.Inventory.Power * (1 + (wingInventoryItem.Level - 1) / 10f);
+        }
+        return (int)power;
+    }
 
     void InitHPDamagePower()
     {

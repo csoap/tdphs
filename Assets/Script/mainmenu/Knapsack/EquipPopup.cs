@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EquipPopup : MonoBehaviour
 {
-    //public PowerShow powerShow;
+    public PowerShow powerShow;
 
     private InventoryItem it;
     private InventoryItemUI itUI;
@@ -88,7 +88,7 @@ public class EquipPopup : MonoBehaviour
     //点击卸下按钮和装备按钮的时候触发
     public void OnEquip()
     {
-        //int startValue = PlayerInfo._instance.GetOverallPower();
+        int startValue = PlayerInfo._instance.GetOverallPower();
         if (isLeft)
         {//从背包装备到身上
             itUI.Clear();//清空该装备所在的格子
@@ -99,8 +99,8 @@ public class EquipPopup : MonoBehaviour
             roleEquip.Clear();//把身上的装备清空
             PlayerInfo._instance.DressOff(it);
         }
-        //int endValue = PlayerInfo._instance.GetOverallPower();
-        //powerShow.ShowPowerChange(startValue, endValue);
+        int endValue = PlayerInfo._instance.GetOverallPower();
+        powerShow.ShowPowerChange(startValue, endValue);
 
         InventoryUI._instance.SendMessage("UpdateCount");
         OnClose();
