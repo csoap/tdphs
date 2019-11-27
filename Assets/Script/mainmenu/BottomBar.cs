@@ -52,7 +52,7 @@ public class BottomBar : MonoBehaviour
     }
     void OnTask()
     {
-        //TaskUI._instance.Show();
+        TaskUI._instance.Show();
     }
     void OnSkill()
     {
