@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 87607d578c1b9224386c3b8b6b48a5d9
-timeCreated: 1573785544
+guid: b837612a8891ad3448630a753cd4d198
+timeCreated: 1576459397
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -173,9 +173,8 @@ ModelImporter:
     2100002: 'Material #42'
     4300000: ce01_leg01
     4300002: lod1
-    7400000: Take 001
+    7400000: idle
     9500000: //RootNode
-    11100000: //RootNode
     13700000: ce01_leg01
     13700002: lod1
   externalObjects: {}
@@ -197,7 +196,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -206,11 +205,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Take 001
+      name: idle
       takeName: Take 001
       firstFrame: 0
       lastFrame: 40
-      wrapMode: 2
+      wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
@@ -277,7 +276,7 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
