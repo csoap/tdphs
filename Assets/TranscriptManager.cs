@@ -14,13 +14,5 @@ public class TranscriptManager : MonoBehaviour {
         _instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
     }
-
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    
 }

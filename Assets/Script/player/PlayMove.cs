@@ -23,8 +23,16 @@ public class PlayMove : MonoBehaviour
         if (Mathf.Abs(h) > 0.05f || Mathf.Abs(v) > 0.05f)
         {
             anim.SetBool("Move", true);
-            GetComponent<Rigidbody>().velocity = new Vector3(velocity*h, NowVel.y,velocity* v);
-            transform.LookAt(new Vector3(h,0,v) + transform.position);
+            //没有技能释放 才会控制朝向
+            if (anim.GetCurrentAnimatorStateInfo(1).IsName("Empty State"))
+            {
+                GetComponent<Rigidbody>().velocity = new Vector3(velocity * h, NowVel.y, velocity * v);
+                transform.LookAt(new Vector3(h, 0, v) + transform.position);
+            }
+            else
+            {
+                GetComponent<Rigidbody>().velocity = new Vector3(0, NowVel.y, 0);
+            }
         }
         else
         {
