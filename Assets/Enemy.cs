@@ -14,10 +14,11 @@ public class Enemy : MonoBehaviour {
 		
 	}
     //受到攻击调用方法
-    //收到多少伤害
-    //浮空和后退距离
-    void TakeDamage()
+    //0收到多少伤害
+    //1浮空距离
+    //2后退距离
+    void TakeDamage(string args)
     {
-
+        string[] proArray = args.Split(',');
     }
 }

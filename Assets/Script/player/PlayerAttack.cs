@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour {
 
     public float distanceAttackForwad = 2; //向前攻击距离
     public float distanceAttackAround = 2; // 周围攻击距离
-    
+    public int[] damageArray = new int[]{20,30,30,30};
     //攻击范围
     public enum AttackRange
     {
@@ -55,7 +55,7 @@ public class PlayerAttack : MonoBehaviour {
             ArrayList arrayList = GetEnemyInAttackRange(AttackRange.Forward);
             foreach (GameObject go in arrayList)
             {
-                go.SendMessage("TakeDamage"); //TODO 参数一会再写 enemy
+                go.SendMessage("TakeDamage", damageArray[0] + "," + proArray[3] + "," + proArray[4]); //TODO 参数一会再写 enemy
             }
         }
         else
