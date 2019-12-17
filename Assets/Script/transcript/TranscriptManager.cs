@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class TranscriptManager : MonoBehaviour {
 
-	// Use this for initialization
     public static TranscriptManager _instance;
     public GameObject player;
-
+    public List<GameObject> enemyList = new List<GameObject>();
 
     void Awake()
     {
