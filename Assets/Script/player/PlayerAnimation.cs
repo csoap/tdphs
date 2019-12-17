@@ -23,7 +23,6 @@ public class PlayerAnimation : MonoBehaviour
         }
         else
         {
-            Debug.Log(isPress);
             anim.SetBool("Skill" + (int)posType, isPress);
         }
 

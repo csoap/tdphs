@@ -127,9 +127,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.1316026
-  m_TransitionOffset: 0.011275904
-  m_ExitTime: 0.64012694
+  m_TransitionDuration: 0.09238693
+  m_TransitionOffset: 0.03741969
+  m_ExitTime: 0.7136563
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -289,9 +289,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.15620923
-  m_TransitionOffset: 0.09803919
-  m_ExitTime: 0.6779123
+  m_TransitionDuration: 0.17382681
+  m_TransitionOffset: 0.07596453
+  m_ExitTime: 0.4278503
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -418,7 +418,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: atack01
-  m_Speed: 2
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 1101927331772369774}
