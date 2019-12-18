@@ -72,6 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400006}
   - component: {fileID: 11400006}
+  - component: {fileID: 114416037428398074}
   m_Layer: 0
   m_Name: HolyFireStrike
   m_TagString: Untagged
@@ -1498,3 +1499,14 @@ Prefab:
 --- !u!1002 &100100001
 EditorExtensionImpl:
   serializedVersion: 6
+--- !u!114 &114416037428398074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08653ca727007f499d69f37c08e8a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

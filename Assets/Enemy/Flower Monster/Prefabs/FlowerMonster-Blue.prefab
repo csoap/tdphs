@@ -607,6 +607,7 @@ Transform:
   - {fileID: 400022}
   - {fileID: 400004}
   - {fileID: 400024}
+  - {fileID: 4494511252928552}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -911,7 +912,7 @@ Animation:
   m_GameObject: {fileID: 100018}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ee6c43afb3f99cb4aa72b5a23f2f3f73, type: 3}
+  m_Animation: {fileID: 7400000, guid: 822afce55ca9ac84eb855c97c10f9aeb, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: 2e0f0ff56efedc743bd598627d14ac47, type: 3}
   - {fileID: 7400000, guid: 822afce55ca9ac84eb855c97c10f9aeb, type: 3}
@@ -1003,6 +1004,34 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100018}
   m_IsPrefabParent: 1
+--- !u!1 &1239872476339622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4494511252928552}
+  m_Layer: 0
+  m_Name: BloodPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4494511252928552
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239872476339622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.779, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400018}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &114560970299949120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1014,3 +1043,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6060df8a3afad7440912fa497ba4bfbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageEffectPrefab: {fileID: 100008, guid: 1eade989a94acff43aa1549fbdbb471e, type: 2}
+  hp: 200

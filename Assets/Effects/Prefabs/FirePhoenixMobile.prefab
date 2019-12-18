@@ -399,6 +399,8 @@ GameObject:
   m_Component:
   - component: {fileID: 400052}
   - component: {fileID: 11400012}
+  - component: {fileID: 114993466011860848}
+  - component: {fileID: 114927234402915662}
   m_Layer: 0
   m_Name: FirePhoenixMobile
   m_TagString: Untagged
@@ -991,7 +993,7 @@ MonoBehaviour:
   MoveDistance: 20
   IsHomingMove: 0
   IsVisible: 1
-  DeactivateAfterCollision: 1
+  DeactivateAfterCollision: 0
   DeactivateTimeDelay: 2
   LayerMask:
     serializedVersion: 2
@@ -7778,3 +7780,26 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100052}
   m_IsPrefabParent: 1
+--- !u!114 &114927234402915662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78251438f54ccde4fa7347051dac2f35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyTime: 3
+--- !u!114 &114993466011860848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08653ca727007f499d69f37c08e8a8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
