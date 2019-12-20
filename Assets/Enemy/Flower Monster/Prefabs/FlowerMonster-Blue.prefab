@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 400018}
   - component: {fileID: 11100000}
   - component: {fileID: 114560970299949120}
+  - component: {fileID: 143012479573694858}
   m_Layer: 0
   m_Name: FlowerMonster-Blue
   m_TagString: Enemy
@@ -1044,4 +1045,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageEffectPrefab: {fileID: 100008, guid: 1eade989a94acff43aa1549fbdbb471e, type: 2}
-  hp: 200
+  hp: 100
+  speed: 1
+  downSpped: 1
+  attackRate: 2
+  attackDistance: 1.8
+--- !u!143 &143012479573694858
+CharacterController:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 2
+  m_Radius: 0.68
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.9, z: 0}
