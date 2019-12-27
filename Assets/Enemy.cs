@@ -17,12 +17,20 @@ public class Enemy : MonoBehaviour
     private float attackTimer = 0;//攻击计时
     private float distance; //与主角的距离
     public float attackDistance = 2; //攻击距离
+    private GameObject HpBarGameObject; //血条
+    private UISlider hpBarSlider;
+    private int hpTotal = 0;
 
     void Start()
     {
+        hpTotal = hp;
         bloodPoint = transform.Find("BloodPoint");
         cc = GetComponent<CharacterController>();
         InvokeRepeating("CalcDistance", 0, 0.1f); //获取和主角的距离，每隔0.1s获取一次，不需要再update获取，节约性能
+        Transform HpBarPoint = transform.Find("HpPoint");
+        
+        HpBarGameObject = HpBarManager._instance.GetHpBar(HpBarPoint.gameObject);
+        hpBarSlider = HpBarGameObject.transform.Find("Bg").GetComponent<UISlider>();
     }
 
     void Update()
@@ -91,11 +99,12 @@ public class Enemy : MonoBehaviour
     void TakeDamage(string args)
     {
         if (hp <= 0) return;
-
+        Combo._instance.ComboPlus();
         string[] proArray = args.Split(',');
         //减去伤害值
         int damage = int.Parse(proArray[0]);
         hp -= damage;
+        hpBarSlider.value = (float) hp / hpTotal;
         //受到攻击德动画
         GetComponent<Animation>().Play("takedamage");
         //浮空 后退
@@ -108,6 +117,7 @@ public class Enemy : MonoBehaviour
         if (hp <= 0)
         {
             Dead();
+            Destroy(HpBarGameObject);
         }
     }
 
