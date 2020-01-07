@@ -9,6 +9,13 @@ public class PlayerAttack : MonoBehaviour {
     public float distanceAttackForwad = 100; //向前攻击距离
     public float distanceAttackAround = 200; // 周围攻击距离
     public int[] damageArray = new int[]{20,30,30,30};
+    public int hp = 1000; //主角血量
+    private Animator anim; // 控制主角动画
+
+    private GameObject hudTextGameObject;
+    private HUDText hudText; //造成伤害文本
+
+    private Transform damageShowPoint;
     //攻击范围
     public enum AttackRange
     {
@@ -30,6 +37,11 @@ public class PlayerAttack : MonoBehaviour {
         {
             effectDict.Add(pe.gameObject.name, pe);
         }
+
+        anim = transform.GetComponent<Animator>();
+        damageShowPoint = transform.Find("DamageShowPoint");
+        hudTextGameObject = HpBarManager._instance.GetHudText(damageShowPoint.gameObject);
+        hudText = hudTextGameObject.GetComponent<HUDText>();
     }
     /// <summary>
     /// args: normal,attack1,attack1,1,0     攻击  攻击特效1 ，音效,前进一步 ，上升0
@@ -233,4 +245,17 @@ public class PlayerAttack : MonoBehaviour {
         return arrayList;
     }
 
+    void TakeDamage(int damage)
+    {
+        if (hp <= 0) return;
+        hp -= damage;
+        int random = Random.Range(0, 100);
+        //播放收到攻击的动画
+        if (random < damage)
+        {
+            anim.SetTrigger("TakeDamage");
+        }
+        hudText.Add("-" + damage, Color.red, 1); //显示血量减少
+        BloodScene.Instance.Show(); //屏幕红光
+    }
 }

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 57d6712163cc31a439fcf2e43cb15b9d
-timeCreated: 1575097574
+guid: 90408cd626fe3a44ba6c31e53799ff01
+timeCreated: 1578376842
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -173,7 +173,7 @@ ModelImporter:
     2100002: 'Material #42'
     4300000: ce01_leg01
     4300002: lod1
-    7400000: Take 001
+    7400000: hit
     9500000: //RootNode
     13700000: ce01_leg01
     13700002: lod1
@@ -203,7 +203,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: hit
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
