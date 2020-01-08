@@ -3,26 +3,9 @@ using System.Collections;
 
 public class FollowTarget : MonoBehaviour
 {
-
-    //public Vector3 offset;
-    //private Transform playerBip;
-    //public float smoothing = 1;
-
-    //// Use this for initialization
-    //void Start()
-    //{
-    //    playerBip = GameObject.FindGameObjectWithTag("Player").transform.Find("Bip01");
-    //}
-
-    //// Update is called once per frame
-    //void FixedUpdate()
-    //{
-    //    //transform.position = playerBip.position + offset;
-    //    Vector3 targetPos = playerBip.position + offset;
-    //    transform.position = Vector3.Lerp(transform.position, targetPos, smoothing * Time.deltaTime);
-    //}
     Vector3 Dir;
     public GameObject m_Player;
+    public float smoothing = 2.3f;
     void Start()
     {
         //获取到摄像机于要跟随物体之间的距离
@@ -31,6 +14,8 @@ public class FollowTarget : MonoBehaviour
     void LateUpdate()
     {
         //摄像机的位置
-        transform.position = m_Player.transform.position - Dir;
+        //transform.position = m_Player.transform.position - Dir;
+        Vector3 targetPos = m_Player.transform.position - Dir;
+        transform.position = Vector3.Lerp(transform.position, targetPos, smoothing * Time.deltaTime); //缓慢移动
     }
 }
