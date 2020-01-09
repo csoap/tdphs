@@ -26,6 +26,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+        TranscriptManager._instance.enemyList.Add(gameObject);
         hpTotal = hp;
         bloodPoint = transform.Find("BloodPoint");
         cc = GetComponent<CharacterController>();

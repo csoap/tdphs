@@ -56,7 +56,7 @@ public class Boss : MonoBehaviour
         else
         {
             //在攻击视野之外，进行转向
-            GetComponent<Animation>().CrossFade("walk ");
+            GetComponent<Animation>().CrossFade("walk");
             Quaternion targetRotation = Quaternion.LookRotation(playerPos - transform.position);
             transform.rotation =  Quaternion.Lerp(transform.rotation, targetRotation,1 * Time.deltaTime);
         }
